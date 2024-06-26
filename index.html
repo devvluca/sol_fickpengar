@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Sol Fickpengar LTDA</title>
     <meta charset="utf-8" />
@@ -8,51 +9,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset de margens padrão do navegador */
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Para evitar barras de rolagem horizontais desnecessárias */
+            overflow-x: hidden;
+            font-family: 'Oxanium', sans-serif;
         }
 
         /* Estilo para a navegação */
         #nav {
-            background: #007BA7; /* Cor de fundo azul */
+            background: #007BA7;
             display: flex;
-            justify-content: space-between; /* Distribui os itens à esquerda e à direita */
-            align-items: center; /* Centraliza verticalmente os itens */
-            padding: 15px 60px; /* Aumenta o padding vertical e horizontal */
-            font-family: 'Oxanium', sans-serif; /* Aplica a fonte Oxanium */
-            color: white; /* Cor do texto */
-            position: relative; /* Posicionamento relativo para elementos filhos */
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            color: white;
+            position: relative;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         #nav::after {
             content: '';
             position: absolute;
-            bottom: -2px; /* Posiciona o detalhe abaixo da navbar */
+            bottom: -2px;
             left: 0;
-            width: 100%; /* Largura total */
-            height: 2px; /* Altura do retângulo */
-            background: linear-gradient(to right, #007BA7, white); /* Degradê da esquerda (azul) para a direita (branco) */
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #007BA7, white);
         }
 
         #nav .brand {
-            font-size: 1.2em; /* Tamanho da fonte */
-            line-height: 1.2; /* Altura da linha */
-            text-align: left; /* Alinha o texto à esquerda */
-            font-weight: 400; /* Peso da fonte regular */
-            display: flex; /* Para alinhar flexívelmente o texto da marca */
-            flex-direction: column; /* Alinha o texto da marca em coluna */
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: left;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
         }
 
         #nav .brand .first-line {
-            font-weight: 700; /* Peso da fonte bold */
+            font-weight: 700;
         }
 
         #nav .brand .second-line {
-            font-size: 0.8em; /* Tamanho da fonte para a segunda linha */
-            font-weight: 300; /* Peso da fonte light */
+            font-size: 0.8em;
+            font-weight: 300;
         }
 
         #nav ul {
@@ -60,7 +62,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 30px; /* Aumenta o espaçamento entre os itens da lista */
+            gap: 30px;
         }
 
         #nav ul li {
@@ -70,12 +72,11 @@
         #nav ul li a {
             text-decoration: none;
             color: white;
-            font-weight: 400; /* Peso da fonte regular */
+            font-weight: 300;
             padding: 10px 20px;
-            border: 2px solid white; /* Adiciona contorno branco */
-            border-radius: 30px; /* Aumenta o raio da borda para deixar mais arredondado */
+            border: 2px solid white;
+            border-radius: 30px;
             transition: background-color 0.3s, color 0.3s;
-            font-weight: 300; /* Peso da fonte light */
         }
 
         #nav ul li a:hover {
@@ -85,16 +86,16 @@
 
         .hero-section {
             position: relative;
-            background-image: url('images/banner.jpg'); /* Verifique o caminho da imagem */
+            background-image: url('images/banner.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 110vh; /* Aumentado */
             display: flex;
-            justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+            justify-content: flex-start;
             align-items: center;
             color: white;
-            text-align: left; /* Alinha o texto à esquerda */
-            padding-left: 20px; /* Adiciona um padding à esquerda para afastar o texto da borda */
+            text-align: left;
+            padding-left: 20px;
         }
 
         .hero-section::before {
@@ -104,7 +105,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Escurecer a imagem de fundo */
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .hero-content {
@@ -113,89 +114,232 @@
         }
 
         .hero-content h2 {
-            font-family: 'Source Serif Pro', serif; /* Define a fonte para Source Serif Pro */
-            font-size: 4em; /* Tamanho do texto aumentado */
-            font-weight: 300; /* Peso da fonte light */
+            font-family: 'Source Serif Pro', serif;
+            font-size: 4em;
+            font-weight: 300;
             margin-bottom: 20px;
         }
 
         .hero-content .btn {
             font-size: 1.2em;
-            padding: 12px 24px; /* Ajuste o padding conforme necessário */
-            background-color: white; /* Fundo branco por padrão */
-            color: #007BA7; /* Texto azul */
-            border: 2px solid white; /* Borda branca */
-            border-radius: 30px; /* Aumenta o raio da borda para deixar mais arredondado */
+            padding: 12px 24px;
+            background-color: white;
+            color: #007BA7;
+            border: 2px solid white;
+            border-radius: 30px;
             transition: background-color 0.3s, color 0.3s;
-            font-weight: 300; /* Peso da fonte light */
+            font-weight: 300;
         }
 
         .hero-content .btn:hover {
-            background-color: transparent; /* Fundo transparente ao passar o mouse */
-            color: white; /* Texto branco */
+            background-color: transparent;
+            color: white;
+        }
+
+        .wrapper {
+            padding: 50px;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 50px; /* Aumentado */
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-content h2 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #007BA7;
+            font-weight: 300;
+        }
+
+        .about-content .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #007BA7;
+            font-weight: 300;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 50px; /* Aumentado */
+            background-color: #007BA7;
+            color: white;
+        }
+
+        .info-section .info-content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        .info-section .info-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .info-section .info-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .info-section .info-image {
+            width: 50%;
+        }
+
+        .info-section .info-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .new-section {
+            padding: 100px 50px; /* Aumentado */
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .new-section h2 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .new-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .new-section .cta-button {
+            background-color: #007BA7;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: 300;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .new-section .cta-button:hover {
+            background-color: white;
+            color: #007BA7;
+            border: 2px solid #007BA7;
         }
     </style>
 </head>
+
 <body class="is-preload">
-<div id="page-wrapper">
+    <div id="page-wrapper">
 
-    <!-- Header -->
-    <div id="header">
+        <!-- Header -->
+        <div id="header">
 
-        <!-- Nav -->
-        <nav id="nav">
-            <div class="brand">
-                <span class="first-line" style="font-weight: 500;">Sol Fickpengar</span>
-                <span class="second-line" style="font-weight: 300;">LTDA</span>
-            </div> <!-- Texto à esquerda -->
-            <ul>
-                <li class="current"><a href="index.html" style="font-weight: 300;">Home</a></li>
-                <li><a href="#" style="font-weight: 300;">Sobre nós</a></li>
-                <li><a href="#" style="font-weight: 300;">Simular economia</a></li>
-                <li><a href="#" style="font-weight: 300;">Login</a></li>
-            </ul>
-        </nav>
+            <!-- Nav -->
+            <nav id="nav">
+                <div class="brand">
+                    <span class="first-line">Sol Fickpengar</span>
+                    <span class="second-line">LTDA</span>
+                </div>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="#about">Sobre nós</a></li>
+                    <li><a href="#info">Informações</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>USE NOSSAS ENERGIAS <br> PARA UM FUTURO <br>MELHOR</h2>
+                <button type="button" class="btn btn-primary">QUERO CONTRATAR</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="icon">☀️</div>
+                <h2>Sabemos que o que fazemos é único</h2>
+                <p>Na jornada para um futuro mais sustentável, cada ação conta. Na nossa missão de promover a energia limpa e renovável, estamos comprometidos em oferecer soluções que não só impulsionam o presente, mas também moldam um amanhã mais brilhante. Com nossas tecnologias inovadoras e dedicada expertise, capacitamos você a fazer a transição para uma fonte de energia mais limpa e eficiente. Juntos, podemos criar um mundo onde a energia do sol não apenas ilumina nossas casas, mas também ilumina o caminho para um futuro mais verde e próspero para as gerações vindouras.</p>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info" class="info-section">
+            <div class="info-content">
+                <h3>FONTE DE ENERGIA:</h3>
+                <p>Nossa energia é proveniente de uma usina parceira nas proximidades e dela vem sua distribuição.</p>
+                <h3>ASSINATURA VIRTUAL:</h3>
+                <p>Simule sua economia, preencha o cadastro e assine digitalmente, sem sair do conforto de sua casa.</p>
+                <h3>FATURAMENTO MENSAL:</h3>
+                <p>No final do mês, você efetuará o pagamento pela geração de energia de acordo com o seu consumo, além dos custos de distribuição e impostos para a distribuidora.</p>
+                <h3>DESCONTO:</h3>
+                <p>Com a gente, você pode aproveitar um desconto adicional de 10%, garantindo ainda mais economia.</p>
+            </div>
+            <div class="info-image">
+                <img src="URL_DA_IMAGEM" alt="Painéis Solares">
+            </div>
+        </section>
+
+        <!-- New Section -->
+        <section class="new-section">
+            <h2>ELEVE SEU NEGÓCIO AO PRÓXIMO NÍVEL COM A AJUDA DA SOL FICKPENGAR LTDA E SUAS SOLUÇÕES DE ENERGIA RENOVÁVEL.</h2>
+            <p>DESCUBRA NOSSAS SOLUÇÕES ABRANGENTES, ADAPTÁVEIS A TODOS OS SETORES DA ECONOMIA, ENQUANTO ECONOMIZA E CONTRIBUI PARA UM PLANETA MAIS SUSTENTÁVEL.</p>
+            <button class="cta-button">quero contratar</button>
+        </section>
 
     </div>
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h2 style="font-weight: 400;">USE NOSSAS ENERGIAS <br> PARA UM FUTURO <br>MELHOR</h2>
-            <button type="button" class="btn btn-primary" style="font-weight: 300;">QUERO CONTRATAR</button>
-        </div>
-    </section>
-
-    <!-- Resto do conteúdo da página -->
-    <section class="wrapper style1">
-        <div class="container">
-            <div id="content">
-                <article class="title-index" style="text-align: center;">
-                    <header>
-                        <h2 style="font-weight: 400;">Transforme a energia do sol em economia para você</h2>
-                        <p style="font-weight: 300;">Descubra como nossos painéis solares podem reduzir suas despesas e ajudar o meio ambiente.</p>
-                    </header>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Restante das seções -->
-    <!-- ... -->
-
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.dropotron.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-<div id="titleBar"><a href="#navPanel" class="toggle"></a>
-    <span class="title">Sol Fickpengar LTDA</span>
-</div>
-
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
