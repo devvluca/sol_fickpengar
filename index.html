@@ -24,7 +24,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 60px;
-            color: white;
+            color: #f1f1f1;
             position: relative;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 2;
@@ -37,7 +37,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(to right, #007BA7, white);
+            background: linear-gradient(to right, #f1f1f1, #007BA7);
         }
 
         #nav .brand {
@@ -118,12 +118,12 @@
             font-family: 'Source Serif Pro', serif;
             font-size: 4em;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .hero-content .btn {
-            font-size: 1.2em;
-            padding: 12px 24px;
+            font-size: 1em;
+            padding: 10px 24px;
             background-color: white;
             color: #007BA7;
             border: 2px solid white;
@@ -150,19 +150,19 @@
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .about-content h2 {
             font-family: 'Source Serif Pro', serif;
-            font-size: 3em;
+            font-size: 3.3em;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 100px;
         }
 
         .about-content p {
-            font-size: 1.2em;
-            line-height: 1.6;
+            font-size: 1.3em;
+            line-height: 1.5;
             color: #007BA7;
             font-weight: 300;
         }
@@ -206,34 +206,34 @@
         }
 
         .info-section .info-content h3 {
-            font-size: 1.5em;
+            font-size: em;
             margin-bottom: 20px;
         }
 
         .info-section .info-content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1em;
+            margin-bottom: 10px;
         }
 
         .info-section .info-image {
-            width: 50%;
+            width: 80%;
         }
 
         .info-section .info-image img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 100px;
         }
 
         .new-section {
             padding: 100px 50px;
             text-align: center;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
 
         .new-section h2 {
-            font-size: 2.5em;
-            font-weight: 300;
-            margin-bottom: 20px;
+            font-size: 3.5em;
+            font-weight: 100;
+            margin-bottom: 50px;
             color: #333;
         }
 
@@ -241,7 +241,7 @@
             font-size: 1.2em;
             line-height: 1.6;
             color: #333;
-            margin-bottom: 40px;
+            margin-bottom: 150px;
         }
 
         .new-section .cta-button {
@@ -254,6 +254,7 @@
             font-weight: 300;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
+            font-family: 'Source Serif Pro', serif;
         }
 
         .new-section .cta-button:hover {
@@ -370,6 +371,67 @@
             <p>DESCUBRA NOSSAS SOLUÇÕES ABRANGENTES, ADAPTÁVEIS A TODOS OS SETORES DA ECONOMIA, ENQUANTO ECONOMIZA E CONTRIBUI PARA UM PLANETA MAIS SUSTENTÁVEL.</p>
             <button class="cta-button">quero contratar</button>
         </section>
+        <!-- Partnerships Section -->
+<section class="partnerships-section">
+    <h2>Parcerias</h2>
+    <div class="partnerships-container">
+        <div class="partner">
+            <img src="URL_DO_LOGO_PARCEIRO1" alt="Logo Parceiro 1">
+        </div>
+        <div class="partner">
+            <img src="URL_DO_LOGO_PARCEIRO2" alt="Logo Parceiro 2">
+        </div>
+        <div class="partner">
+            <img src="URL_DO_LOGO_PARCEIRO3" alt="Logo Parceiro 3">
+        </div>
+        <div class="partner">
+            <img src="URL_DO_LOGO_PARCEIRO4" alt="Logo Parceiro 4">
+        </div>
+        <div class="partner">
+            <img src="URL_DO_LOGO_PARCEIRO5" alt="Logo Parceiro 5">
+        </div>
+    </div>
+</section>
+
+<style>
+    .partnerships-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #007BA7;
+    }
+
+    .partnerships-section h2 {
+        font-size: 2.5em;
+        font-weight: 300;
+        margin-bottom: 30px;
+        color: #f9f9f9;
+    }
+
+    .partnerships-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: #f9f9f9;
+    }
+
+    .partner {
+        flex: 1 1 calc(20% - 20px);
+        max-width: calc(20% - 20px);
+        color: #f1f1f1;
+    }
+
+    .partner img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .partner img:hover {
+        transform: scale(1.05);
+    }
+</style>
 
     </div>
     <script>
