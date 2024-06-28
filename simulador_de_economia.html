@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <title>Simulador de Economia - Sol Fickpengar LTDA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        #nav {
+            background: #007BA7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            color: white;
+            position: relative;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        #nav::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #007BA7, white);
+        }
+
+        #nav .brand {
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: left;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #nav .brand .first-line {
+            font-weight: 700;
+        }
+
+        #nav .brand .second-line {
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        #nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        #nav ul li {
+            display: inline;
+        }
+
+        #nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 300;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #nav ul li a:hover {
+            background-color: white;
+            color: #007BA7;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content .btn {
+            font-size: 1.2em;
+            padding: 12px 24px;
+            background-color: white;
+            color: #007BA7;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hero-content .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .simulate-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .simulate-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .simulate-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .simulate-section form label {
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+            color: #007BA7;
+        }
+
+        .simulate-section form input {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            width: 300px;
+            border: 2px solid #007BA7;
+            border-radius: 5px;
+        }
+
+        .simulate-section form button {
+            font-size: 1.2em;
+            padding: 12px 24px;
+            background-color: #007BA7;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .simulate-section form button:hover {
+            background-color: white;
+            color: #007BA7;
+            border: 2px solid #007BA7;
+        }
+
+        .result-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #007BA7;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="brand">
+            <span class="first-line">Sol Fickpengar</span>
+            <span class="second-line">LTDA</span>
+        </div>
+        <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="#about">Sobre nós</a></li>
+            <li><a href="#info">Informações</a></li>
+            <li><a href="#simulate">Simular economia</a></li>
+        </ul>
+        <div class="profile-icon" onclick="toggleProfileMenu()">
+            <img src="https://via.placeholder.com/40" alt="Profile Icon">
+        </div>
+    </nav>
+    <div id="profileMenu" class="profile-menu">
+        <a href="#">Quero contratar</a>
+        <a href="#">Conta</a>
+        <a href="central_de_ajuda.html">Central de ajuda</a>
+        <a href="#">Sair da conta</a>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Economize Agora</h2>
+            <a href="#simulate" class="btn">Comece a Simular</a>
+        </div>
+    </section>
+
+    <section id="simulate" class="simulate-section">
+        <h2>Simule Sua Economia</h2>
+        <form id="simulationForm">
+            <label for="currentBill">Conta de Energia Atual:</label>
+            <input type="number" id="currentBill" name="currentBill" placeholder="Valor da conta atual" required>
+
+            <label for="energyUsage">Consumo de Energia Mensal (kWh):</label>
+            <input type="number" id="energyUsage" name="energyUsage" placeholder="Consumo mensal em kWh" required>
+
+            <button type="submit">Simular</button>
+        </form>
+    </section>
+
+    <section id="result" class="result-section" style="display: none;">
+        <h2>Resultado da Simulação</h2>
+        <p id="resultMessage"></p>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function toggleProfileMenu() {
+            const profileMenu = document.getElementById('profileMenu');
+            profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.profile-icon img')) {
+                const profileMenu = document.getElementById('profileMenu');
+                if (profileMenu.style.display === 'block') {
+                    profileMenu.style.display = 'none';
+                }
+            }
+        }
+
+        document.getElementById('simulationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const currentBill = parseFloat(document.getElementById('currentBill').value);
+            const energyUsage = parseFloat(document.getElementById('energyUsage').value);
+
+            const newBill = currentBill * 0.80; // Reduz 20% da conta atual
+            const resultMessage = `Com a nossa solução, sua nova conta de energia será aproximadamente R$ ${newBill.toFixed(2)}. Isso representa uma economia de 20%!`;
+
+            document.getElementById('resultMessage').textContent = resultMessage;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
