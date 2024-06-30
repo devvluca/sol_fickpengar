@@ -1,59 +1,90 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <title>Quero Contratar - Sol Fickpengar LTDA</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quero Contratar - Empresa XYZ</title>
     <style>
-        /* Estilos CSS semelhantes aos da página principal */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #007BA7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BA7;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007BA7;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #007BA7;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
-
-<body class="is-preload">
-    <div id="page-wrapper">
-
-        <!-- Header -->
-        <div id="header">
-
-            <!-- Nav -->
-            <nav id="nav">
-                <div class="brand">
-                    <span class="first-line">Sol Fickpengar</span>
-                    <span class="second-line">LTDA</span>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#about">Sobre nós</a></li>
-                    <li><a href="#info">Informações</a></li>
-                    <li class="current"><a href="quero_contratar.html">Quero contratar</a></li>
-                    <li><a href="conta.html">Conta</a></li>
-                </ul>
-                <div class="profile-icon" onclick="toggleProfileMenu()">
-                    <img src="https://via.placeholder.com/40" alt="Profile Icon">
-                </div>
-            </nav>
-            <div id="profileMenu" class="profile-menu">
-                <a href="#">Quero contratar</a>
-                <a href="conta.html">Conta</a>
-                <a href="central_de_ajuda.html">Central de ajuda</a>
-                <a href="#">Sair da conta</a>
-            </div>
-        </div>
-
-        <!-- Conteúdo da Página Quero Contratar -->
-        <section class="section">
-            <h2>Quero Contratar</h2>
-            <p>Aqui você pode encontrar informações detalhadas sobre como contratar nossos serviços de energia renovável.</p>
-            <!-- Adicione o conteúdo específico da página conforme necessário -->
+<body>
+    <header>
+        <h1>Quero Contratar - Empresa XYZ</h1>
+    </header>
+    <div class="container">
+        <section>
+            <p>Se você está interessado em nossos serviços ou produtos, preencha o formulário abaixo e entraremos em contato o mais rápido possível.</p>
+            <form action="#" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                <input type="submit" value="Enviar">
+            </form>
         </section>
-
     </div>
-    <script>
-        // JavaScript para o toggle do menu de perfil foi mantido aqui
-    </script>
+    <footer>
+        <p>Entre em contato conosco: Telefone: (XX) XXXX-XXXX | Email: exemplo@empresa.com.br</p>
+    </footer>
 </body>
-
 </html>
