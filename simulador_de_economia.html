@@ -86,7 +86,7 @@
 
         .hero-section {
             position: relative;
-            background-image: url('images/banner.jpg');
+            background-image: url('images/image 3.jpeg');
             background-size: cover;
             background-position: center;
             height: 50vh;
@@ -271,18 +271,18 @@
         }
 
         document.getElementById('simulationForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+    e.preventDefault();
 
-            const currentBill = parseFloat(document.getElementById('currentBill').value);
-            const energyUsage = parseFloat(document.getElementById('energyUsage').value);
+    const currentBill = parseFloat(document.getElementById('currentBill').value);
+    const energyUsage = parseFloat(document.getElementById('energyUsage').value);
 
-            const newBill = currentBill * 0.80; // Reduz 20% da conta atual
-            const resultMessage = `Com a nossa solução, sua nova conta de energia será aproximadamente R$ ${newBill.toFixed(2)}. Isso representa uma economia de 20%!`;
+    const newBill = currentBill * 0.90; // Reduz 10% da conta atual
+    const resultMessage = `Com a nossa solução, sua nova conta de energia será aproximadamente R$ ${newBill.toFixed(2)}. Isso representa uma economia de 10%!`;
 
-            document.getElementById('resultMessage').textContent = resultMessage;
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('result').style.display = 'block';
-        });
+    document.getElementById('resultMessage').textContent = resultMessage;
+    document.getElementById('result').style.display = 'block';
+});
+
     </script>
 </body>
 
