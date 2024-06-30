@@ -12,12 +12,14 @@
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #007BA7;
-            color: #ffffff;
+        .header {
+            background-color: #ffffff;
+            color: #007BA7;
+            padding: 10px;
             text-align: center;
-            padding: 20px 0;
+            font-family: 'Montserrat', sans-serif;
         }
+        
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -38,7 +40,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
-        input[type="text"], textarea {
+        input[type="text"], input[type="email"], textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -55,23 +57,109 @@
             border-radius: 4px;
         }
         footer {
-            background-color: #007BA7;
-            color: #ffffff;
+            background-color: #ffff;
+            color: #000000;
             text-align: center;
             padding: 10px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
+        /* Navbar styles */
+        #nav {
+            background: #007BA7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            color: white;
+            position: relative;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        #nav::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #007BA7, white);
+        }
+
+        #nav .brand {
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: left;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #nav .brand .first-line {
+            font-weight: 700;
+        }
+
+        #nav .brand .second-line {
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        #nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        #nav ul li {
+            display: inline;
+        }
+
+        #nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 300;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #nav ul li a:hover {
+            background-color: white;
+            color: #007BA7;
+        }
+
+        /* Title styles */
+        .page-title {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2rem;
+            color: #007BA7;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Quero Contratar - Empresa XYZ</h1>
-    </header>
+
+    <nav id="nav">
+        <div class="brand">
+            <span class="first-line">Sol Fickpengar</span>
+            <span class="second-line">LTDA</span>
+        </div>
+        <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
+        <div class="page-title">Quero Contratar</div>
         <section>
-            <p>Se você está interessado em nossos serviços ou produtos, preencha o formulário abaixo e entraremos em contato o mais rápido possível.</p>
+            <p>Se você está interessado em nossos serviços ou produtos, preencha o formulário abaixo e entraremos em contato o mais rápido possível.
+                favor colocar maneiras práticas para saber quem você é por onde entrar em contato!
+            </p>
             <form action="#" method="post">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
