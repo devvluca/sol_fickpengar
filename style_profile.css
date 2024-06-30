@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    width: 100%;
+    background-color: #0078d7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .logo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+header .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 90px;
+    background-color: rgb(255, 255, 255);
+    width: 85%;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+}
+
+main .form-section {
+    flex: 1;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+
+main .form-section form .form-group {
+    margin-bottom: 15px;
+}
+
+main .form-section form .form-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+main .form-section form .form-group img {
+    margin-right: 5px;
+}
+
+main .form-section form .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main .welcome-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .welcome-section .welcome-message {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+main .welcome-section .image-container {
+    margin-bottom: 20px;
+}
+
+main .welcome-section .image-container img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+main .welcome-section .affiliate-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .welcome-section .affiliate-links .affiliate-link {
+    color: #0078d7;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+main .welcome-section .affiliate-links .contract-button,
+main .welcome-section .affiliate-links .extract-button {
+    background-color: #0078d7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+main .welcome-section .affiliate-links .contract-button:hover,
+main .welcome-section .affiliate-links .extract-button:hover {
+    background-color: #005bb5;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    main .welcome-section {
+        border-top: 1px solid #e0e0e0;
+        border-right: none;
+    }
+}
