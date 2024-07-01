@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sol Fickpengar LTDA - Extrato</title>
+    <style>
+        body {
+            font-family: 'Source Serif Pro', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            background-color: #007ba7;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .header .logo {
+            font-size: 1.2em;
+            margin-left: 20px; /* Espaçamento à esquerda para o logo */
+        }
+        .header .home-button {
+            background-color: #007ba7;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 20px;
+            font-size: 1em;
+            margin-right: 20px; /* Espaçamento à direita para o botão Home */
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .container h2 {
+            font-weight: normal;
+            color: #555;
+            text-align: center;
+        }
+        .extrato-mensal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .card p {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .nav-arrow {
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Sol Fickpengar LTDA</div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+    <div class="container">
+        <h2>Declarações e documentos para ....................... em (202x)</h2>
+        <div class="extrato-mensal">
+            <div class="nav-arrow">&#9664;</div>
+            <div class="card">
+                <h3>Janeiro</h3>
+                <p>Sua conta de energia total: %D</p>
+                <p>Sua conta de energia com desconto: %D</p>
+                <p>Pagamento: Pago/Não pago</p>
+                <p>(Dia) Jan, 202x</p>
+                <p>Capacidade do sistema: (watts)</p>
+            </div>
+            <div class="card">
+                <h3>Fevereiro</h3>
+                <p>Sua conta de energia total: %D</p>
+                <p>Sua conta de energia com desconto: %D</p>
+                <p>Pagamento: Pago/Não pago</p>
+                <p>(Dia) Fev, 202x</p>
+                <p>Capacidade do sistema: (watts)</p>
+            </div>
+            <div class="card">
+                <h3>Março</h3>
+                <p>Sua conta de energia total: %D</p>
+                <p>Sua conta de energia com desconto: %D</p>
+                <p>Pagamento: Pago/Não pago</p>
+                <p>(Dia) Mar, 202x</p>
+                <p>Capacidade do sistema: (watts)</p>
+            </div>
+            <div class="nav-arrow">&#9654;</div>
+        </div>
+    </div>
+</body>
+</html>

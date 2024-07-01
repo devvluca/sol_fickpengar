@@ -124,17 +124,18 @@
         .hero-content .btn {
             font-size: 1em;
             padding: 10px 24px;
-            background-color: white;
-            color: #007BA7;
+            background-color: transparent;
+            color: white;
             border: 2px solid white;
             border-radius: 30px;
             transition: background-color 0.3s, color 0.3s;
             font-weight: 300;
+            text-decoration: none; /* Remover sublinhado */
         }
 
         .hero-content .btn:hover {
-            background-color: transparent;
-            color: white;
+            background-color: white;
+            color: #007BA7;
         }
 
         .wrapper {
@@ -256,9 +257,14 @@
             margin-bottom: 150px;
         }
 
+        .new-section .cta-button a {
+            color: white; /* Alterando cor do texto para branco */
+            text-decoration: none; /* Removendo sublinhado */
+        }
+
         .new-section .cta-button {
             background-color: #007BA7;
-            color: white;
+            color: rgb(0, 0, 0);
             padding: 15px 30px;
             border: none;
             border-radius: 30px;
@@ -270,9 +276,9 @@
         }
 
         .new-section .cta-button:hover {
-            background-color: white;
+            background-color: #007BA7;
             color: #007BA7;
-            border: 2px solid #007BA7;
+            border: 2px solid #000;
         }
 
         .profile-menu {
@@ -309,6 +315,16 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
+        }
+
+        .btn-primary {
+            border: 2px solid white; /* Adicionando borda branca */
+            border-radius: 30px; /* Adicionando borda azul */
+        }
+
+        .btn-primary:hover {
+            background-color: #005f80; /* Alterando cor de fundo ao passar o mouse */
+            border-color: #005f80; /* Alterando cor da borda ao passar o mouse */
         }
         
     </style>
@@ -349,7 +365,7 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h2>USE NOSSAS ENERGIAS <br> PARA UM FUTURO <br>MELHOR</h2>
-                <button type="button" class="btn btn-primary" href="/quero_contratar.html">QUERO CONTRATAR</button>
+                <a class="btn btn-primary" href="/quero_contratar.html">QUERO CONTRATAR</a>
             </div>
         </section>
 
@@ -383,7 +399,8 @@
         <section class="new-section">
             <h2>ELEVE SEU NEGÓCIO AO PRÓXIMO NÍVEL COM A AJUDA DA SOL FICKPENGAR LTDA E SUAS SOLUÇÕES DE ENERGIA RENOVÁVEL.</h2>
             <p>DESCUBRA NOSSAS SOLUÇÕES ABRANGENTES, ADAPTÁVEIS A TODOS OS SETORES DA ECONOMIA, ENQUANTO ECONOMIZA E CONTRIBUI PARA UM PLANETA MAIS SUSTENTÁVEL.</p>
-            <button class="cta-button">Quero contratar</button>
+            <button class="cta-button"> <a href="/quero_contratar.html">Quero contratar</a> </button>
+            <h1 style="color: #007BA7; font-family: 'Montserrat', sans-serif; font-size: 1.5em;"></h2>
             <h2 style="color: #007BA7; font-family: 'Montserrat', sans-serif; font-size: 1.5em;">
                 Sol Fickpengar LTDA
         </section>

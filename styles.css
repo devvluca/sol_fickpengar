@@ -11,7 +11,9 @@ body {
 
 .login-container {
     text-align: center;
-    color: #fff;
+    color: #ffffff;
+    font-family: 'Source Serif Pro', serif;
+
 }
 
 .login-header {
@@ -20,8 +22,33 @@ body {
     left: 10px;
 }
 
+.login-header button {
+    background-color: #007BA7;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px; /* Increased border-radius for more rounded corners */
+    cursor: pointer;
+    text-decoration: none;
+    position:absolute;
+    left: 1420px;
+}
+
+.login-header button a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-header button:hover {
+    background-color: #005f7a;
+}
+
 .company-name {
     font-size: 14px;
+}
+.login-header.first-line{
+    top: 10px;
 }
 
 .login-form {
@@ -68,6 +95,7 @@ form button.login-button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+
 }
 
 form button.login-button:hover {
@@ -90,7 +118,7 @@ form button.login-button:hover {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
-    color: #007BA7;
+    color: #000000;
     transition: background-color 0.3s;
 }
 

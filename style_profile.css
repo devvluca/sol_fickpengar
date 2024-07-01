@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    color: #fff;
+    font-family: 'Source Serif Pro', serif;
 }
 
 body {
@@ -16,23 +18,26 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    color: white;
+    color: #fff;
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 24px;
+header .logo {
+    color: #fff;
 }
 
-header .logo p {
-    margin: 0;
-    font-size: 14px;
+header .home-button {
+    background-color: #0182b0;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #fff; /* Adicionando borda branca */
+    border-radius: 20px; /* Ajustando o border-radius para deixar mais redondo */
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-header .profile-icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+header .home-button:hover {
+    background-color: #005f8b;
 }
 
 main {
@@ -42,21 +47,26 @@ main {
     align-items: center;
     margin-top: 20px;
     padding: 90px;
-    background-color: rgb(255, 255, 255);
+    background-color: 005f8b;
     width: 85%;
     margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
 }
 
+
 main .form-section {
     flex: 1;
     padding: 50px;
-    background-color: #f9f9f9;
+    background-color: #e5e4e4;
     border-right: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
 }
+main .welcome-section .welcome-message p {
+    color: #005f8b; /* Alterando apenas a cor do texto */
+}
+
 
 main .form-section form .form-group {
     margin-bottom: 15px;
@@ -110,14 +120,14 @@ main .welcome-section .affiliate-links {
 }
 
 main .welcome-section .affiliate-links .affiliate-link {
-    color: #0078d7;
+    color: #005f8b;
     margin-bottom: 10px;
     text-decoration: none;
 }
 
 main .welcome-section .affiliate-links .contract-button,
 main .welcome-section .affiliate-links .extract-button {
-    background-color: #0078d7;
+    background-color: #005f8b;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -126,6 +136,13 @@ main .welcome-section .affiliate-links .extract-button {
     cursor: pointer;
     width: 100%;
     max-width: 200px;
+}
+
+main .welcome-section .affiliate-links .contract-button a,
+main .welcome-section .affiliate-links .extract-button a {
+    color: white;
+    text-decoration: none;
+    display: block;
 }
 
 main .welcome-section .affiliate-links .contract-button:hover,

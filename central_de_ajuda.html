@@ -6,18 +6,53 @@
     <title>Central de Ajuda</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Source Serif Pro', serif;
             background-color: #ffffff; /* Fundo branco */
             color: #007BA7; /* Texto azul escuro */
             margin: 0;
             padding: 0;
         }
         .header {
-            background-color: #ffffff;
-            color: #007BA7;
+            background-color: #007ba7; /* Azul escuro */
+            color: white;
             padding: 10px;
-            text-align: center;
-            font-family: 'Source Serif Pro', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo {
+            font-size: 1.5rem;
+            margin-left: 20px; /* Espaçamento à esquerda para o logo */
+        }
+        .header .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            margin-right: 20px; /* Espaçamento à direita para os links */
+        }
+        .header .nav-links li {
+            margin-right: 10px;
+        }
+        .header .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .header .nav-links a:hover {
+            background-color: #005f80; /* Azul mais escuro ao passar o mouse */
+        }
+        .header .home-button {
+            background-color: #007BA7;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 2px solid white; /* Bordar branca */
+            border-radius: 30px; /* Mais redondo */
+            font-size: 1em;
+            transition: background-color 0.3s ease; /* Transição suave */
+        }
+        .header .home-button:hover {
+            background-color: #005f80; /* Azul mais escuro ao passar o mouse */
         }
         .content {
             padding: 200px;
@@ -33,7 +68,7 @@
             margin: 10px;
         }
         .footer {
-            background-color: #ffffff;
+            background-color: #d8d7d7;
             color: #007BA7;
             text-align: center;
             padding: 10px;
@@ -45,13 +80,17 @@
 </head>
 <body>
     <div class="header">
-        <h1>Central de Ajuda</h1>
+        <div class="logo">Sol Fickpengar LTDA</div>
+        <ul class="nav-links">
+            <li><a href="/index.html" class="home-button">Home</a></li>
+            <!-- Adicione mais links conforme necessário -->
+        </ul>
     </div>
     <div class="content">
-        <p> Para qualquer dúvida, entre em contato conosco.</p>
+        <h1>Central de Ajuda</h1>
+        <p>Para qualquer dúvida, entre em contato conosco.</p>
         <a href="https://wa.me/seu-numero-de-whatsapp" class="btn">WhatsApp</a>
         <a href="mailto:seu-email@gmail.com" class="btn">Gmail</a>
-        <a href="index.html">Home</a>
     </div>
     <div class="footer">
         <p>&copy; 2024 Sol Fickpengar LTDA Todos os direitos reservados.</p>
