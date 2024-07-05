@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Oxanium', sans-serif;
+    background-color: #007BA7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Source Serif Pro', serif;
+
+}
+
+.login-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.login-header button {
+    background-color: #007BA7;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px; /* Increased border-radius for more rounded corners */
+    cursor: pointer;
+    text-decoration: none;
+    position:absolute;
+    left: 1420px;
+}
+
+.login-header button a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-header button:hover {
+    background-color: #005f7a;
+}
+
+.company-name {
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFF;
+}
+.login-header.first-line{
+    top: 10px;
+}
+
+.login-form {
+    background: #007BA7;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    color: #fff;
+}
+
+.login-form h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+form p {
+    margin: 10px 0;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form .create-account {
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+form button.login-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #0182b0; /* Cor do botão */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+form button.login-button:hover {
+    background: #005f8b; /* Cor do botão ao passar o mouse */
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000000;
+    transition: background-color 0.3s;
+}
+
+.profile-menu a:hover {
+    background-color: #f1f1f1;
+}
+.profile-icon {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.login-header.first-line {
+    font-weight: 700;
+}
+.login-header.second-line {
+    font-size: 0.8em;
+    font-weight: 300;
+}
