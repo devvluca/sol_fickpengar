@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link class="Style" href="../front/assets/css/main.css">
-    <title>Login</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Source Serif Pro', serif;  /* Fonte da logo */
             background-color: #ffffff;
             color: #007BA7;
             margin: 0;
@@ -19,7 +20,8 @@
             color: #007BA7;
             padding: 10px;
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            font-family: 'Oxanium', sans-serif;
         }
         
         .container {
@@ -146,6 +148,41 @@
             font-size: 2rem;
             color: #007BA7;
         }
+        .profile-icon {
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .profile-menu {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 70px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #007BA7;
+            transition: background-color 0.3s;
+        }
+
+        .profile-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
     </style>
 </head>
 <body>
@@ -155,10 +192,16 @@
             <a href="../front/index.html" class="first-line">Sol Fickpengar</a>
             <a href="../front/index.html"class="second-line">LTDA</a>
         </div>
-        <ul>
-            <li class="current"><a href="index.html">Home</a></li>
-        </ul>
+        <div class="profile-icon" onclick="toggleProfileMenu()">
+            <img src="/front/images/profile.png" alt="Profile Icon">
+        </div>   
     </nav>
+    <div id="profileMenu" class="profile-menu">
+        <a href="quero_contratar.html">Quero contratar</a>
+        <a href="edit_profile.html">Conta</a>
+        <a href="central_de_ajuda.html">Central de ajuda</a>
+        <a href="#">Sair da conta</a>
+    </div>
 
     <div class="container">
         <div class="page-title">Login</div>
