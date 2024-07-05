@@ -1,30 +1,179 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastro</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link class="Style" href="../front/assets/css/main.css">
+    <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #007BA7;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            color: #007BA7;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007BA7;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #ffff;
+            color: #000000;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Navbar styles */
+        #nav {
+            background: #007BA7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            color: white;
+            position: relative;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
 
+        #nav::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #007BA7, white);
+        }
+
+        #nav .brand {
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: left;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #nav .brand .first-line {
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffff;
+        }
+
+        #nav .brand .second-line {
+            font-size: 0.8em;
+            font-weight: 300;
+            text-decoration: none;
+            color: #ffff;
+        }
+
+        #nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        #nav ul li {
+            display: inline;
+        }
+
+        #nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 300;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #nav ul li a:hover {
+            background-color: white;
+            color: #007BA7;
+        }
+
+        /* Title styles */
+        .page-title {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2rem;
+            color: #007BA7;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="login-container">
-        <div class="login-header">
-            <span class="company-name">Sol Fickpengar LTDA</span>
-            <button> <a href="index.html">home</a> </button>
+    <nav id="nav">
+        <div class="brand">
+            <a href="../front/index.html" class="first-line">Sol Fickpengar</a>
+            <a href="../front/index.html"class="second-line">LTDA</a>
         </div>
-        <div class="login-form">
-            <h2>Entrar na sua conta</h2>
-            <p>Use seus dados para logar</p>
-            <form>
-                <input type="email" placeholder="Email" required>
-                <input type="senha1" placeholder="Senha" required>
-                <a href="../front/cadastro.html" class="create-account">Não possui uma conta?</a>
-                <button type="submit" class="login-button">Entrar</button>
+        <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="page-title">Login</div>
+        <section>
+            <form action="#" method="post">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <input type="submit" value="Enviar">
             </form>
-        </div>
+        </section>
     </div>
+    <footer>
+        <p>Entre em contato conosco: Telefone: (XX) XXXX-XXXX | Email: exemplo@empresa.com.br</p>
+    </footer>
 </body>
 </html>
