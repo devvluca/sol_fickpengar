@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-const cadastroRoute = require('./routes/cadastro');
+const port = 3000;
+const db = require('./db'); // Importa o db para garantir que a conexão com o banco seja estabelecida
+const routes = require('./routes/app'); // Importa as rotas
 
-// Configurações do Express
-app.use(bodyParser.json());
-app.use('/api', cadastroRoute);
+// Middleware
+app.use(express.json());
 
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+// Routes
+app.use('/', routes);
+
+// Start server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
