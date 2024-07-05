@@ -1,16 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './styles.css';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('cadastro-form');
-
+    
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-
+        
         const nome = form.nome.value;
         const email = form.email.value;
         const senha1 = form.senha1.value;
