@@ -1,23 +1,12 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "main": "script.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node script.js",
-    "dev": "nodemon server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "start": "node src/server.js"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.4",
+    "express": "^4.17.1",
     "sqlite3": "^5.1.7"
   }
 }
