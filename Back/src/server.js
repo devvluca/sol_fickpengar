@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
-const db = require('./src/db'); // Caminho para o db dentro de src
-const routes = require('./src/routes/app'); // Caminho para as rotas
+const db = require('./db'); // Caminho para o db dentro de src
+const routes = require('./routes/app'); // Caminho para as rotas
 
 // Middleware
 app.use(express.json());
