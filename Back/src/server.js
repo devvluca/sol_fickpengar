@@ -1,25 +1,37 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
-const app = express();
-const port = 3000;
-const db = require('./db'); // Caminho para o db dentro de src
-const routes = require('./routes/app'); // Caminho para as rotas
 
-// Middleware
-app.use(express.json());
+const app = express();
+
+// Middleware para permitir CORS
+app.use(cors());
 
 // Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, '../front/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
-app.use('/', routes);
+// Middleware para parsing de JSON
+app.use(express.json());
 
-// Redirecionar todas as outras rotas para index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../front/public', 'index.html'));
+// Rotas
+const cadastroRoutes = require('./routes/cadastro');
+const loginRoutes = require('./routes/login');
+
+app.use('/api/cadastro', cadastroRoutes);
+app.use('/api/login', loginRoutes);
+
+// Conexão com o banco de dados (exemplo usando MongoDB)
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/seuBancoDeDados', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log('Conectado ao banco de dados');
+}).catch(err => {
+  console.error('Erro ao conectar ao banco de dados:', err);
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });

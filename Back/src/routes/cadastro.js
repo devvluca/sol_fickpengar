@@ -1,22 +1,29 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
-const db = require('../db');
 
-router.post('/', (req, res) => {
-  const { username, password } = req.body;
-  const query = `INSERT INTO users (username, password) VALUES (?, ?)`;
+const User = require('../models/User'); // Assumindo que você tenha um modelo User
 
-  db.run(query, [username, password], function(err) {
-    if (err) {
-      res.status(400).json({ error: err.message });
-      return;
-    }
-    res.status(201).json({
-      id: this.lastID,
+// Rota de cadastro
+router.post('/', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // Criptografar senha
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
       username,
-      password
+      password: hashedPassword
     });
-  });
+
+    await newUser.save();
+
+    res.status(201).json({ message: 'Usuário cadastrado com sucesso!' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao cadastrar usuário' });
+  }
 });
 
 module.exports = router;

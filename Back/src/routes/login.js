@@ -1,22 +1,26 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
-const db = require('../db');
 
-router.post('/', (req, res) => {
-  const { username, password } = req.body;
-  const query = `SELECT * FROM users WHERE username = ? AND password = ?`;
+const User = require('../models/User');
 
-  db.get(query, [username, password], (err, row) => {
-    if (err) {
-      res.status(400).json({ error: err.message });
-      return;
+router.post('/', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    const user = await User.findOne({ username });
+
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+      return res.status(400).json({ error: 'Usuário ou senha incorretos' });
     }
-    if (row) {
-      res.status(200).json({ message: 'Login successful', user: row });
-    } else {
-      res.status(401).json({ message: 'Invalid username or password' });
-    }
-  });
+
+    const token = jwt.sign({ id: user._id }, 'seuSegredoJWT', { expiresIn: '1h' });
+
+    res.json({ token });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao realizar login' });
+  }
 });
 
 module.exports = router;
