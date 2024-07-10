@@ -100,8 +100,7 @@
             color: white;
             text-align: center;
             font-family: 'Source Serif 4', serif;
-}
-
+        }
 
         .hero-section::before {
             content: '';
@@ -169,6 +168,7 @@
             width: 300px;
             border: 2px solid #007BA7;
             border-radius: 5px;
+            color: #333; /* Cor do texto */
         }
 
         .simulate-section form button {
@@ -193,10 +193,16 @@
         }
 
         .result-section p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             line-height: 1.6;
             color: #007BA7;
-            font-weight: 300;
+            font-weight: 700; /* Aumentado o peso da fonte */
+        }
+
+        .result-section h2 {
+            color: #007BA7;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -204,13 +210,12 @@
     <nav id="nav">
         <div class="brand">
             <a href="../front/index.html" class="first-line">Sol Fickpengar</a>
-            <a href="../front/index.html"class="second-line">LTDA</a>
+            <a href="../front/index.html" class="second-line">LTDA</a>
         </div>
         <ul>
             <li class="current"><a href="index.html">Home</a></li>
         </ul>
     </nav>
-
 
     <section class="hero-section">
         <div class="hero-content">
@@ -236,6 +241,33 @@
         <h2>Resultado da Simulação</h2>
         <p id="resultMessage"></p>
     </section>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre a Sol Fickpengar LTDA</h3>
+                <p>Na nossa missão de promover a energia limpa e renovável, estamos comprometidos em oferecer soluções inovadoras para um futuro mais sustentável.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">Sobre nós</a></li>
+                    <li><a href="#info">Informações</a></li>
+                    <li><a href="/front/public/simulador_de_economia.html">Simular economia</a></li>
+                    <li><a href="/front/public/login.html">Entrar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p>Email: contato@solfickpengar.com.br</p>
+                <p>Telefone: 81 99255-5300</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sol Fickpengar LTDA. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script>
         document.querySelectorAll('nav ul li a').forEach(anchor => {
@@ -265,18 +297,17 @@
         }
 
         document.getElementById('simulationForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+            e.preventDefault();
 
-    const currentBill = parseFloat(document.getElementById('currentBill').value);
-    const energyUsage = parseFloat(document.getElementById('energyUsage').value);
+            const currentBill = parseFloat(document.getElementById('currentBill').value);
+            const energyUsage = parseFloat(document.getElementById('energyUsage').value);
 
-    const newBill = currentBill * 0.90; // Reduz 10% da conta atual
-    const resultMessage = `Com a nossa solução, sua nova conta de energia será aproximadamente R$ ${newBill.toFixed(2)}. Isso representa uma economia de 10%!`;
-
-    document.getElementById('resultMessage').textContent = resultMessage;
-    document.getElementById('result').style.display = 'block';
-});
-
+            const newBill = currentBill * 0.90; // Reduz 10% da conta atual
+            const resultMessage = `Parabéns! Com a nossa solução, sua nova conta de energia será aproximadamente R$ ${newBill.toFixed(2)}. Isso representa uma economia de 10%! Imagine o que você pode fazer com essa economia extra todos os meses.`;
+            
+            document.getElementById('resultMessage').textContent = resultMessage;
+            document.getElementById('result').style.display = 'block';
+        });
     </script>
 </body>
 

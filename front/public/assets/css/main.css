@@ -665,7 +665,7 @@ body {
 #footer {
     background: #007BA7;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
     position: relative; /* Removido o fixed */
     bottom: 0;
@@ -721,7 +721,7 @@ body {
     font-size: 0.8em;
 }
 
-/* Adicionando estilo para a página não ser coberta pelo footer */
+/* Fix for footer not covering content */
 body, html {
     height: 100%;
     margin: 0;
@@ -729,11 +729,218 @@ body, html {
 }
 
 .wrapper {
-    min-height: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .content {
     flex: 1;
+}
+
+/* Fix for info section overflow */
+.info-section .info-content {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Additional spacing */
+.section-padding {
+    padding: 40px 40px;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Oxanium', sans-serif;
+}
+
+#nav {
+    background: #007BA7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    color: white;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+#nav::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #007BA7, white);
+}
+
+#nav .brand {
+    font-size: 1.2em;
+    line-height: 1.2;
+    text-align: left;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav .brand .first-line {
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+}
+
+#nav .brand .second-line {
+    font-size: 0.8em;
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+}
+
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+#nav ul li {
+    display: inline;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#nav ul li a:hover {
+    background-color: white;
+    color: #007BA7;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url('images/image 3.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: 'Source Serif 4', serif;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content .btn {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    background-color: white;
+    color: #007BA7;
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-content .btn:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.simulate-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.simulate-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.simulate-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simulate-section form label {
+    font-size: 1.2em;
+    margin: 10px 0 5px 0;
+    color: #007BA7;
+}
+
+.simulate-section form input {
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    width: 300px;
+    border: 2px solid #007BA7;
+    border-radius: 5px;
+    color: #333; /* Cor do texto */
+}
+
+.simulate-section form button {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    background-color: #007BA7;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.simulate-section form button:hover {
+    background-color: white;
+    color: #007BA7;
+    border: 2px solid #007BA7;
+}
+
+.result-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.result-section p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #007BA7;
+    font-weight: 700; /* Aumentado o peso da fonte */
+}
+
+.result-section h2 {
+    color: #007BA7;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
