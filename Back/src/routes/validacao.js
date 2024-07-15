@@ -1,14 +1,18 @@
-const { body, validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
 
-// No arquivo de rota (por exemplo, cadastro.js)
-router.post('/', [
-  body('username').isLength({ min: 5 }).withMessage('Usuário deve ter pelo menos 5 caracteres'),
-  body('password').isLength({ min: 5 }).withMessage('Senha deve ter pelo menos 5 caracteres')
-], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+const verifyToken = (req, res, next) => {
+  const token = req.headers['authorization'];
+  if (!token) {
+    return res.status(403).json({ error: 'Nenhum token fornecido' });
   }
 
-  // Restante da lógica de cadastro...
-});
+  jwt.verify(token, 'seuSegredoJWT', (err, decoded) => {
+    if (err) {
+      return res.status(500).json({ error: 'Falha na autenticação do token' });
+    }
+    req.userId = decoded.id;
+    next();
+  });
+};
+
+module.exports = { verifyToken };

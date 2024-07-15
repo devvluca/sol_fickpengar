@@ -4,13 +4,15 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon src/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "express-validator": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
     "sqlite3": "^5.1.7"
   }
 }

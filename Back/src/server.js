@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -8,7 +9,7 @@ const app = express();
 app.use(cors());
 
 // Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Middleware para parsing de JSON
 app.use(express.json());
@@ -16,16 +17,14 @@ app.use(express.json());
 // Rotas
 const cadastroRoutes = require('./routes/cadastro');
 const loginRoutes = require('./routes/login');
+const appRoutes = require('./routes/app');
 
 app.use('/api/cadastro', cadastroRoutes);
 app.use('/api/login', loginRoutes);
+app.use('/api', appRoutes);
 
 // Conexão com o banco de dados (exemplo usando MongoDB)
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/seuBancoDeDados', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.DB_URI).then(() => {
   console.log('Conectado ao banco de dados');
 }).catch(err => {
   console.error('Erro ao conectar ao banco de dados:', err);

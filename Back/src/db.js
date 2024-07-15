@@ -1,17 +1,11 @@
-const sqlite3 = require('sqlite3').verbose();
+const mongoose = require('mongoose');
 
-const db = new sqlite3.Database('./database.db', (err) => {
-  if (err) {
-    console.error('Erro ao abrir o banco de dados:', err.message);
-  } else {
-    console.log('Conectado ao banco de dados SQLite3.');
-  }
+// Modelo de usuário
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true },
+  password: { type: String, required: true }
 });
 
-db.run(`CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  username TEXT NOT NULL UNIQUE,
-  password TEXT NOT NULL
-)`);
+const User = mongoose.model('User', userSchema);
 
-module.exports = db;
+module.exports = User;
