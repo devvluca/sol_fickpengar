@@ -3,73 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
     <style>
         body {
-            font-family: 'Source Serif Pro', serif;  /* Fonte da logo */
-            background-color: #ffffff;
-            color: #007BA7;
             margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #ffffff;
-            color: #007BA7;
-            padding: 10px;
-            text-align: center;
             overflow-x: hidden;
             font-family: 'Oxanium', sans-serif;
+            background-color: #007BA7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            flex-direction: column;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
+
+        .login-container {
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Source Serif Pro', serif;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+
+        .login-header {
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
+
+        .login-header button {
+            background-color: #007BA7;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
         }
-        form {
-            background-color: #f2f2f2;
-            padding: 20px;
+
+        .login-header button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .login-header button:hover {
+            background-color: #005f7a;
+        }
+
+        .company-name {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #FFF;
+            font-family: 'Source Serif Pro', serif;
+        }
+
+        .login-form {
+            background: #007BA7;
+            padding: 30px;
             border-radius: 8px;
-            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            color: #fff;
         }
-        input[type="text"], input[type="email"], textarea {
+
+        .login-form h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+
+        form p {
+            margin: 10px 0;
+        }
+
+        form input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        input[type="submit"] {
-            background-color: #007BA7;
-            color: #ffffff;
-            border: none;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            border-radius: 4px;
+
+        form .create-account {
+            display: block;
+            margin: 10px 0;
+            font-size: 12px;
+            color: #FFF;
+            text-decoration: none;
         }
-        footer {
-            background-color: #ffff;
-            color: #000000;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
+
+        form button.login-button {
             width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background: #0182b0;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
         }
-        /* Navbar styles */
+
+        form button.login-button:hover {
+            background: #005f8b;
+        }
+
+        .profile-menu {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 70px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #000000;
+            transition: background-color 0.3s;
+        }
+
+        .profile-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
         #nav {
             background: #007BA7;
             display: flex;
@@ -103,15 +180,11 @@
 
         #nav .brand .first-line {
             font-weight: 700;
-            text-decoration: none;
-            color: #ffff;
         }
 
         #nav .brand .second-line {
             font-size: 0.8em;
             font-weight: 300;
-            text-decoration: none;
-            color: #ffff;
         }
 
         #nav ul {
@@ -141,82 +214,45 @@
             color: #007BA7;
         }
 
-        /* Title styles */
-        .page-title {
+        .header {
+            background-color: #ffffff;
+            color: #007BA7;
+            padding: 10px;
             text-align: center;
-            margin: 40px 0;
-            font-size: 2rem;
-            color: #007BA7;
-        }
-        .profile-icon {
-            cursor: pointer;
-            position: relative;
-            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .profile-icon img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-        .profile-menu {
-            display: none;
+        .footer {
             position: absolute;
-            right: 20px;
-            top: 70px;
-            background-color: white;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            z-index: 3;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #FFF;
         }
-
-        .profile-menu a {
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #007BA7;
-            transition: background-color 0.3s;
-        }
-
-        .profile-menu a:hover {
-            background-color: #f1f1f1;
-        }
-
     </style>
 </head>
 <body>
-
-    <nav id="nav">
-        <div class="brand">
-            <a href="/front/public/index.html" class="first-line">Sol Fickpengar</a>
-            <a href="/front/public/index.html"class="second-line">LTDA</a>
+    <div class="company-name">
+        Sol Fickpengar LTDA
+    </div>
+    <div class="login-container">
+        <div class="login-header">
+            <button><a href="/front/public/index.html">home</a></button>
         </div>
-        <div class="profile-icon" onclick="toggleProfileMenu()">
-            <img src="/front/public/images/profile.png" alt="Profile Icon">
-        </div>   
-    </nav>
-    <div id="profileMenu" class="profile-menu">
-        <a href="quero_contratar.html">Quero contratar</a>
-        <a href="edit_profile.html">Conta</a>
-        <a href="central_de_ajuda.html">Central de ajuda</a>
-        <a href="#">Sair da conta</a>
-    </div>
-
-    <div class="container">
-        <div class="page-title">Login</div>
-        <section>
-            <form action="#" method="post">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <input type="submit" value="Enviar">
+        <div class="login-form">
+            <h2>Login</h2>
+            <p>Use seus dados para acessar</p>
+            <form>
+                <input type="email" placeholder="E-mail">
+                <input type="text" placeholder="Nome">
+                <button class="login-button" type="submit">Entrar</button>
+                <a href="/front/public/cadastro.html" class="create-account">Não possui uma conta? Cadastre-se</a>
             </form>
-        </section>
+        </div>
     </div>
-    <footer>
-        <p>Entre em contato conosco: Telefone: (81) 99255-5300 | Email: contato@solfickpengar.com.br</p>
-    </footer>
+    <div class="footer">
+        Entre em contato conosco: Telefone: (81) 99255-5300 | Email: contato@solfickpengar.com.br
+    </div>
 </body>
 </html>

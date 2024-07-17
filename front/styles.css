@@ -115,8 +115,7 @@ form button.login-button:hover {
     overflow: hidden;
     z-index: 3;
 }
-
-.profile-menu a {
+file-menu a {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
